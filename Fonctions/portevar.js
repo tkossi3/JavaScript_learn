@@ -32,3 +32,4 @@ function mettreAJourNomLocal(nouveauNom){
 mettreAJourNomLocal("Pierre"); // Appelle la fonction pour mettre à jour le nom localement avec "Pierre"
 
 console.log(monNom); // Affiche le nom global "Marie" car la variable locale dans la fonction ne modifie pas la variable globale
+

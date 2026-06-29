@@ -15,5 +15,5 @@ testHoisting();
 console.log(x);
 
 testHoisting2(x);
-console.log(x);
+console.log(x); 
 console.log(q);

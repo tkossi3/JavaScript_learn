@@ -18,3 +18,4 @@ personne.ville = "Lomé";
 console.log(personne.ville); // Affiche la ville de la personne
 
 personne.direBonjour(); // Appelle la méthode direBonjour et affiche le message dans la console
+
