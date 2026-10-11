@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let guess = 8
+        let chiffre
+        while (chiffre !== guess){
+            chiffre = prompt('Devinez le chiffre : ') * 1
+            if (chiffre < guess){
+                alert('Plus grand')
+            } else if(chiffre > guess){
+                alert('Plus petit')
+            } else {
+                alert('Bravo !')
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
