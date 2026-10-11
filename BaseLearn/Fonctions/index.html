@@ -16,7 +16,40 @@
         maFonction.call()
         maFonction.call('Vrai !!!')
 
-        
+        const a = {
+            firstname : 'Tinos',
+            lastname: 'KOSSI',
+            fullname : function () {
+                console.log(`${this.firstname} ${this.lastname}`)
+            }
+        }
+        a.fullname;
+
+        const maFonction = (param1, param2) => {
+            console.log(`${param1} ${param2} ${this}`)
+        }
+        maFonction(1, 2)
+
+        const somme = (a, b) => a + b
+        console.log(`${somme(2,6)}`)
+
+        const isPair = function (a, cb) {
+            if ( a % 2 === 0 ) {
+                cb(a)
+            }
+        }
+        isPair(4, function (n) {
+            console.log('Mon nombre est pair ' + n)
+        })
+
+        // Exercices
+        /*
+        */
+       // On crée un nombre entre 0 & 10
+       // 3 essaie pour deviner le nombre
+       //isRight(n)
+       // guess()
+       
     </script>
 </head>
 <body>
