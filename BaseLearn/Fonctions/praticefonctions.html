@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const students = [
+            {
+                name: 'Daniel',
+                notes: [14, 12, 16, 9]
+            },
+            {
+                name: 'Yanick',
+                notes: [12, 15, 8, 11]
+            }
+        ]
+
+        const moyenne = (notes) => {
+            let sum = 0
+            for (let note of notes){
+                sum = sum + note
+            }
+            return sum / notes.length
+        }
+
+        const compareStudents = (a, b) => {
+            return b.moyenne - a.moyenne
+        }
+
+        for (let student of students){
+            student.moyenne = moyenne(student.notes)
+            student.worst = Math.min(...student.notes)
+            student.best = Math.max(...student.notes)
+        }
+
+        students.sort(compareStudents)
+
+        const formatStudent = (student) => {
+            return `${student.name} avec une moyenne de ${student.moyenne}, la meilleur note ${student.best} et la mauvaise note ${student.worst}.`
+        }
+
+        for (let student of students){
+            student.moyenne = moyenne(student.notes)
+        }
+
+        for (let student of students){
+            console.log(formatStudent(student))
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
