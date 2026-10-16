@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        const a = {a: 2}
+
+        const moyenne = (notes) => {
+            let sum = 0
+            for (let note of notes){
+                sum = sum + note
+            }
+            return sum / notes.length
+        }
+
+        class Student {
+            ecole = 'Jules ferry'
+            _notes = []
+
+            constructor (firstname, lastname) {
+                this.firstname = firstname
+                this.lastname = lastname
+            }
+
+            set notes (v) {
+                if (Array.isArray(v)) {
+                    this._notes = v
+                }
+            }
+
+            get name () {
+                return `${this.firstname} ${lastname}`
+            }
+
+            /*setNotes (notes) {
+                this.notes = notes
+            }*/
+
+            canPass () {
+                return moyenne(this._notes) >= 10
+            }
+        }
+
+        const john = new Student('John', 'Doe')
+        const jane = new Student('Jane', 'Vsen')
+        john.notes = [10, 10, 9] // john.setNotes([10, 10, 9])
+        jane.notes = [15, 18, 19]
+        console.log(john, jane)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
