@@ -19,6 +19,7 @@
         class Student {
             ecole = 'Jules ferry'
             _notes = []
+            #secret = 'hi !'
 
             constructor (firstname, lastname) {
                 this.firstname = firstname
@@ -35,18 +36,43 @@
                 return `${this.firstname} ${lastname}`
             }
 
+            get notes () {
+                console.log(this._notes)
+            }
+
             /*setNotes (notes) {
                 this.notes = notes
             }*/
 
             canPass () {
-                return moyenne(this._notes) >= 10
+                return moyenne(this._notes) >= Student.moyenne
+            }
+
+            static moyenne = 10
+            static hello () {
+                console.log("Greenting ...")
             }
         }
 
-        const john = new Student('John', 'Doe')
+        class SuperStudent extends Student {
+
+            constructeur (firstname, lastname, notes) {
+                super(firstname, lastname)
+                this._notes = notes
+            }
+
+            get name () {
+                return 'Super ' + super.name
+            }
+
+            canPass () {
+                return super.canPass()
+            }
+        }
+
+        const john = new SuperStudent('John', 'Doe', [0, 10, 8])
         const jane = new Student('Jane', 'Vsen')
-        john.notes = [10, 10, 9] // john.setNotes([10, 10, 9])
+        //john.notes = [0, 10, 8] // john.setNotes([10, 10, 9])
         jane.notes = [15, 18, 19]
         console.log(john, jane)
     </script>
